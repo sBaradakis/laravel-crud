@@ -20,7 +20,10 @@
     <td>{{$customer->email}}</td>
     <td>{{$customer->created_at}}</td>
     <td>{{$customer->updated_at}}</td>
-    <td></td>
+    <td>
+      <a href="{{route('customers.show', [ "id" => $customer->id  ])}}">Show</a> 
+      <a href="{{route('customers.edit', [ "id" => $customer->id  ])}}">Edit</a> 
+    </td>
   </tr>
   @endforeach
 </table>
