@@ -20,6 +20,7 @@
     <input type="text" name="email" id="input-email" value="{{old('email', $customer->email)}}">
     
     <button type="submit">Update</button>
+    <a href="{{route('customers.index')}}">Back</a>
 
 </form>
 @endsection
