@@ -9,6 +9,6 @@
 <p>updated at: {{$customer->updated_at}}</p>
 
 
-<a href="{{route('customers.index')}}">Back to index</a>
+<a href="{{route('customers.index')}}">Back</a>
 
 @endsection

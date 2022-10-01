@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PaymentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +30,12 @@ Route::group([
     Route::get('/{id}', [CustomerController::class, 'show'])->name('show');
     Route::get('/{id}/edit', [CustomerController::class, 'edit'])->name('edit');
     Route::put('/{id}', [CustomerController::class, 'update'])->name('update');
+});
+
+Route::group([
+    'prefix' => 'payments',
+    'as' => 'payments.'
+], function () {
+    Route::post('/', [PaymentController::class, 'store'])->name('store');
+    Route::get('/', [PaymentController::class, 'index'])->name('index');
 });
