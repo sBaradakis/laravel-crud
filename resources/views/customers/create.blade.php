@@ -16,7 +16,7 @@
     @csrf
     <input type="text" name="name" id="input-name" value="{{old('name')}}">
     <input type="text" name="email" id="input-email" value="{{old('email')}}">
-    <button type="submit">Store</button>
+    <button type="submit">Save</button>
 
 </form>
 @endsection

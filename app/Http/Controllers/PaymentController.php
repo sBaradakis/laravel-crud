@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        return (view('payments.index',['customer' => 'test']));
+        return (view('payments.index',['payments' => 'test']));
     }
 
     /**
@@ -24,7 +25,11 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        //
+        $allCustomers = Customer::all();
+        return view('payments.create', [
+            "customers" => $allCustomers
+        ] );
+        // return (view('payments.create'));
     }
 
     /**
@@ -35,7 +40,10 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        die('store');
+        $allCustomers = Customer::all();
+        return view('payments.index', [
+            "customers" => $allCustomers
+        ] );
     }
 
     /**

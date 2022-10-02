@@ -38,4 +38,5 @@ Route::group([
 ], function () {
     Route::post('/', [PaymentController::class, 'store'])->name('store');
     Route::get('/', [PaymentController::class, 'index'])->name('index');
+    Route::get('/create', [PaymentController::class, 'create'])->name('create');
 });
